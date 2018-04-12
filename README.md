@@ -13,3 +13,8 @@ https://github.com/OSSDC/OSSDC-360LIDAR/blob/master/tests/GetDistanceI2c-test-1.
 
 Screenshots:
 https://github.com/OSSDC/OSSDC-360LIDAR/tree/master/tests/runs-screenshots
+
+https://github.com/OSSDC/OSSDC-360LIDAR/blob/master/tests/runs-screenshots/Screenshot_2018-04-09_20-34-17.png?raw=true
+
+https://github.com/OSSDC/OSSDC-360LIDAR/blob/master/tests/runs-screenshots/Screenshot_2018-04-09_20-45-04.png?raw=true
+
