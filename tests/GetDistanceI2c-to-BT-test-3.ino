@@ -39,17 +39,17 @@ char cmd = 0;
 
 #include <SoftwareSerial.h>
 
-SoftwareSerial BTSerial(10, 11); // RX | TX
+SoftwareSerial BTSerial(8, 9); // RX | TX
 
 void setup()
 {
 
-  pinMode(9, OUTPUT);  // this pin will pull the HC-05 pin 34 (key pin) HIGH to switch module to AT mode
-  digitalWrite(9, HIGH);
-  Serial.begin(9600);// BT works on 9600, 38400 and USB works on 115200); // Initialize serial connection to display distance readings
+  //pinMode(9, OUTPUT);  // this pin will pull the HC-05 pin 34 (key pin) HIGH to switch module to AT mode
+  //digitalWrite(9, HIGH);
+  Serial.begin(115200);// BT works on 9600, 38400 and USB works on 115200); // Initialize serial connection to display distance readings
   Serial.println("Enter AT commands:");
-  BTSerial.begin(9600);  // HC-05 default speed in AT command more
-  //BTSerial.begin(19200); 
+  BTSerial.begin(115200);  // HC-05 default speed in AT command more
+  //BTSerial.begin(9600); //19200); 
   /*
     To return HC-05 to mfg. default settings: "AT+ORGL"
     To get version of your HC-05 enter: "AT+VERSION?"
@@ -147,11 +147,11 @@ void loop()
   if(dist>maxVal)
     maxVal = dist;
     
-  if(nextTime<micros())
+  if(collect) //if false is don't collect
   {
-    if(collect) //if false is don't collect
+    if(nextTime<micros())
     {
-      if(printEvery)
+       if(printEvery)
         Serial.println("\nEvery stats:");
       else
         Serial.println("Batch stats:");
@@ -215,5 +215,4 @@ void loop()
      };
      cmd=0;
   }
-  
 }
