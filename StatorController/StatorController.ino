@@ -11,7 +11,7 @@
 //
 //
 
-#define NANO 0
+#define NANO 1
 
 // BOT is PWD, TOP is On or Off
 
@@ -19,12 +19,12 @@
 #if NANO
     // Nano PWM D3 D5 D6 D9 D10 D11:
     //  - D9/D10 on OC1A/B did not work.
-    #define OUTPUT_PhaseA_BOT 3
-    #define OUTPUT_PhaseB_BOT 5
-    #define OUTPUT_PhaseC_BOT 6
-    #define OUTPUT_PhaseA_TOP 10
-    #define OUTPUT_PhaseB_TOP 11
-    #define OUTPUT_PhaseC_TOP 12
+    #define OUTPUT_PhaseA_BOT 9
+    #define OUTPUT_PhaseB_BOT 10
+    #define OUTPUT_PhaseC_BOT 11
+    #define OUTPUT_PhaseA_TOP 3
+    #define OUTPUT_PhaseB_TOP 5
+    #define OUTPUT_PhaseC_TOP 6
     #define pinButtonSpeedAutoToggle       4
     #define pinButtonSpeedPotDisableToggle 7
     #define pinButtonSpeedDec              8
@@ -55,11 +55,11 @@
 // ----------------------------------------------------------------------
 // LCD Stuff
 // Find your address from I2C Scanner function and add it here:
-#if NANO
-    #define LCD_I2C 0x27
-#else 
+// #if NANO
+    // #define LCD_I2C 0x27
+// #else 
     #define LCD_I2C 0x3F
-#endif
+// #endif
 #define LCD_BACKLIGHT_PIN 3
 #define LCD_En_pin  2
 #define LCD_Rw_pin  1
